@@ -12,6 +12,7 @@
     "lint": "eslint . --ext .vue,.js,.ts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "primevue": "^3.38.1",
     "vue": "^3.3.7"
   },
   "devDependencies": {
