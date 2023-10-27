@@ -3,10 +3,12 @@ import { defineComponent } from 'vue';
 import axios from 'axios';
 import Button from 'primevue/button';
 import { toShortDate } from './utils/filters';
+import VueFacingDecorator from '@/components/VueFacingDecorator.vue';
 
 export default defineComponent({
   components: {
-    PButton: Button
+    PButton: Button,
+    VueFacingDecorator,
   },
   data() {
     return {
@@ -101,7 +103,6 @@ export default defineComponent({
       >View navbar docs &raquo;</a>
     </div>
 
-
     <PButton
       @click="count++"
     >
@@ -109,10 +110,10 @@ export default defineComponent({
     </PButton>
     <div>Click count: {{ count }}</div>
 
-    <PButton
-      label="Show"
-      severity="success"
-    />
+    <p>
+      <VueFacingDecorator name="Jon" />
+    </p>
+
 
     <p>
       i18n test: {{ $t("message.hello") }}

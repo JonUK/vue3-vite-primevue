@@ -10,5 +10,4 @@ dayjs.locale('en-GB');
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function DayjsPlugin(app: App): void {
-
 }
