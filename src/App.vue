@@ -2,6 +2,7 @@
 import { defineComponent } from 'vue';
 import axios from 'axios';
 import Button from 'primevue/button';
+import { toShortDate } from './utils/filters';
 
 export default defineComponent({
   components: {
@@ -19,6 +20,9 @@ export default defineComponent({
       .then(response => {
         this.currentPrice = JSON.stringify(response.data);
       });
+  },
+  methods: {
+    toShortDate
   }
 });
 </script>
@@ -110,11 +114,13 @@ export default defineComponent({
       severity="success"
     />
 
-    <div>
+    <p>
       i18n test: {{ $t("message.hello") }}
-    </div>
+    </p>
 
-    <div>Current price: {{ currentPrice }}</div>
+    <p>The date is: {{ toShortDate(new Date()) }}</p>
+
+    <p>Current price: {{ currentPrice }}</p>
   </main>
 </template>
 

@@ -6,6 +6,8 @@ import { createI18n } from 'vue-i18n';
 import PrimeVue from 'primevue/config';
 import Bootstrap_PassThrough from './plugins/primevue-bootstrap-passthrough';
 
+import { DayjsPlugin } from './plugins/dayjsPlugin';
+
 import { messages } from './i18n/messages';
 
 import App from './App.vue';
@@ -22,5 +24,6 @@ const i18n = createI18n({
 app.use(PrimeVue, { unstyled: true, pt: Bootstrap_PassThrough });
 
 app.use(i18n);
+app.use(DayjsPlugin);
 
 app.mount('#app');
