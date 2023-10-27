@@ -9,4 +9,4 @@ export const messages = {
       hello: 'こんにちは、世界'
     }
   }
-}
+};

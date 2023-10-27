@@ -12,7 +12,7 @@ export default defineComponent({
     return {
       count: 0,
       currentPrice: 'Unknown'
-    }
+    };
   },
   mounted() {
     axios
