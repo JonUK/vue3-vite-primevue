@@ -1,11 +1,16 @@
-import './assets/main.css'
+import './assets/main.scss'
 
 import { createApp } from 'vue'
+
 import PrimeVue from 'primevue/config';
+import Bootstrap_PassThrough from './plugins/primevue-bootstrap-passthrough';
+
 import App from './App.vue';
 
-import 'primevue/resources/themes/lara-light-teal/theme.css';
-
 const app = createApp(App);
-app.use(PrimeVue);
+
+// Use PrimeVue in unstyled mode with Bootstrap styling
+// https://primevue.org/bootstrap
+app.use(PrimeVue, { unstyled: true, pt: Bootstrap_PassThrough });
+
 app.mount('#app');
