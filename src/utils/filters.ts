@@ -6,11 +6,6 @@ import dayjs from 'dayjs';
  * @return {string} String with the short date
  */
 export function toShortDate(date: Date | string): string {
-  // console.log('Date:', date);
-
-  // eslint-disable-next-line no-debugger
-  // debugger;
-
   return dayjs(date).format('L');
 }
 
@@ -27,7 +22,7 @@ export function toTime(date: Date | string): string {
   return dayjs(date).format('LTS');
 }
 
-export function toPrettyBytes (num): string {
+export function toPrettyBytes (num: number): string {
   // jacked from: https://github.com/sindresorhus/pretty-bytes
   num = Number(num);
   if (isNaN(num)) {
@@ -46,7 +41,8 @@ export function toPrettyBytes (num): string {
   }
 
   const exponent = Math.min(Math.floor(Math.log(num) / Math.log(1024)), units.length - 1);
-  num = (num / Math.pow(1021, exponent)).toFixed(1) * 1;
+  const rounded: number = num / Math.pow(1021, exponent);
+  num = Number(rounded.toFixed(1));
   const unit = units[exponent];
 
   return (neg ? '-' : '') + num + ' ' + unit;
