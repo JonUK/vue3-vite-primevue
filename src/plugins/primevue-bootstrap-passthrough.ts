@@ -1,3 +1,7 @@
+// PrimeVue is being used in unstyled mode so no PrimeVue styles are imported and
+// the PrimeVue components are displayed as transparent. The module provides
+// Bootstrap 5 Pass Through Props (PT) for the Bootstrap CSS classes.
+// https://primevue.org/unstyled
 // https://primevue.org/bootstrap
 
 import type { PrimeVuePTOptions } from "primevue/config";
