@@ -1,7 +1,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Button from 'primevue/button';
 
 export default defineComponent({
+  components: {
+    PButton: Button
+  },
   data() {
     return {
       count: 0
