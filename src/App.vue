@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
+import axios from 'axios';
 import Button from 'primevue/button';
 
 export default defineComponent({
@@ -8,8 +9,16 @@ export default defineComponent({
   },
   data() {
     return {
-      count: 0
+      count: 0,
+      currentPrice: 'Unknown'
     }
+  },
+  mounted() {
+    axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => {
+        this.currentPrice = JSON.stringify(response.data);
+      });
   }
 });
 </script>
@@ -104,6 +113,8 @@ export default defineComponent({
     <div>
       i18n test: {{ $t("message.hello") }}
     </div>
+
+    <div>Current price: {{ currentPrice }}</div>
   </main>
 </template>
 
