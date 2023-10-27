@@ -100,6 +100,10 @@ export default defineComponent({
       label="Show"
       severity="success"
     />
+
+    <div>
+      i18n test: {{ $t("message.hello") }}
+    </div>
   </main>
 </template>
 
